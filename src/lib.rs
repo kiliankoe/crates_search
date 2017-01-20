@@ -65,7 +65,6 @@ pub fn search(query: &str) -> Result<Vec<Crate>, Error> {
         Err(err) => return Err(Error::Json(err)),
     };
 
-    // println!("{}", json);
     let json = match json["crates"] {
         JsonValue::Array(ref arr) => arr,
         _ => return Err(Error::Decoding("Found non-array-value in `crates`.")),
