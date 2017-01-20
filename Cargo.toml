@@ -7,6 +7,8 @@ description = "Search for crates from within Rust."
 homepage = "https://github.com/kiliankoe/crates_search"
 repository = "https://github.com/kiliankoe/crates_search"
 
+license = "MIT"
+
 [dependencies]
 reqwest = "0.3"
 json = "0.11"
