@@ -4,5 +4,5 @@ version = "0.1.0"
 authors = ["Kilian Koeltzsch <me@kilian.io>"]
 
 [dependencies]
-reqwest = "*"
-json = "*"
+reqwest = "0.3"
+json = "0.11"
