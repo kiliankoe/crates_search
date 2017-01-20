@@ -3,6 +3,10 @@ name = "crates_search"
 version = "0.1.0"
 authors = ["Kilian Koeltzsch <me@kilian.io>"]
 
+description = "Search for crates from within Rust."
+homepage = "https://github.com/kiliankoe/crates_search"
+repository = "https://github.com/kiliankoe/crates_search"
+
 [dependencies]
 reqwest = "0.3"
 json = "0.11"
