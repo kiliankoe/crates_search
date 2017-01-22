@@ -10,7 +10,7 @@ This was quickly thrown together and will probably not satisfy any use case besi
 extern crate crates_search;
 
 fn main() {
-    let crates = crates_search::search("reqwest").unwrap();
+    let crates = crates_search::search("crates_search").unwrap();
     println!("{:?}", crates);
 }
 ```
