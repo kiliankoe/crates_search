@@ -28,5 +28,15 @@ struct Crates {
 pub fn search(query: &str) -> Result<Vec<Crate>, reqwest::Error> {
     let url = format!("https://crates.io/api/v1/crates?page=1&per_page=100&q={}",
                       query);
-    reqwest::get(&url)?.json().map(|response: Crates| response.crates)
+
+    let client = reqwest::Client::new().expect("Failed to create new reqwest client");
+    // Working around a possible bug in reqwest/hyper on macOS, see https://github.com/seanmonstar/reqwest/issues/26
+    let mut headers = reqwest::header::Headers::new();
+    headers.set(reqwest::header::Connection::close());
+
+    client.get(&url)
+        .headers(headers)
+        .send()?
+        .json()
+        .map(|response: Crates| response.crates)
 }
